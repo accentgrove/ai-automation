@@ -4,14 +4,14 @@
 
 ## 当前状态
 
-**Phase 0（评估与设计）已完成，等待 Gate 0 批准。** 仓库中还没有应用代码。
+**Gate 0 已通过（2026-10-19）。** Phase 1 等待启动批准。仓库中还没有应用代码。
 
 ## 文档
 
 | 文件 | 内容 |
 | --- | --- |
 | [docs/phase-0-assessment.md](docs/phase-0-assessment.md) | 范围确认、开放决策覆盖、规范缺口、假设、风险、Gate 0 判定 |
-| [docs/decision-log.md](docs/decision-log.md) | 全部决策（5 条已批准，16 条待批准） |
+| [docs/decision-log.md](docs/decision-log.md) | 全部决策（22 条，全部已批准） |
 | [docs/architecture.md](docs/architecture.md) | 组件、信任边界、关键流程、租户隔离、数据模型、接口、Pack 格式 |
 | [docs/threat-model.md](docs/threat-model.md) | 27 条威胁，逐条映射到红队测试和对应 Phase |
 | [docs/development-plan.md](docs/development-plan.md) | Phase 1–6 的工期、入口与退出条件、证据要求、裁剪规则 |
@@ -21,7 +21,7 @@
 
 ```bash
 python3 scripts/verify_phase0.py          # 校验文档完整性（应当通过）
-python3 scripts/verify_phase0.py --gate   # 判定 Gate 0（全部决策批准前会失败）
+python3 scripts/verify_phase0.py --gate   # 判定 Gate 0
 ```
 
 只依赖 Python 3.10 以上的标准库。

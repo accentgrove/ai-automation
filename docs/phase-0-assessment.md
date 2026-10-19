@@ -18,17 +18,17 @@
 
 | 规范开放决策 | 决策 | 状态 |
 | --- | --- | --- |
-| VPS provider, region, sizing | D-006 | Proposed |
-| AI provider, model, retention, budget | D-007 | Proposed |
-| Data sensitivity, data-protection law | D-008 | Proposed |
-| Pack manifest format, signing scheme | D-009 | Proposed |
-| Backup destination, retention, deletion SLA | D-010 | Proposed |
-| Per-tenant encryption keys | D-011 | Proposed |
+| VPS provider, region, sizing | D-006 | Approved |
+| AI provider, model, retention, budget | D-007 | Approved |
+| Data sensitivity, data-protection law | D-008 | Approved |
+| Pack manifest format, signing scheme | D-009 | Approved |
+| Backup destination, retention, deletion SLA | D-010 | Approved |
+| Per-tenant encryption keys | D-011 | Approved |
 | First reference pack and industry | D-004 | Approved |
-| Webhook providers | D-012 | Proposed |
-| RPO and RTO | D-018 | Proposed |
-| Approval owners | D-019 | Proposed |
-| Minimum UI scope | D-020 | Proposed |
+| Webhook providers | D-012 | Approved |
+| RPO and RTO | D-018 | Approved |
+| Approval owners | D-019 | Approved |
+| Minimum UI scope | D-020 | Approved |
 
 ## 3. 规范缺口与内部矛盾（已在决策中处理）
 
@@ -57,7 +57,7 @@
 
 | ID | 风险 | 严重度 | 缓解 | 负责人 |
 | --- | --- | --- | --- | --- |
-| R-01 | **与 ELIO 战略重叠。** 两套 Core 并行，一人维护，进度互相拖累，决策互相漂移 | 高 | Phase 1 开始前，在本日志新增一条 Tier 2 决策，写明两个项目的分工（例如：本项目是通用 Core 产品线，ELIO 是行业 OS），否则暂停其中一个 | Alvin |
+| R-01 | **与 ELIO 战略重叠。** 两套 Core 并行，一人维护，进度互相拖累，决策互相漂移 | 高 | D-022：两个项目完全独立，产能风险由所有者接受；实际工期超过计划 150% 时触发分工复审 | Alvin |
 | R-02 | 单一审批人与开发者，自我批准 | 中 | D-019 冷静期；Tier 3 前用独立 AI 复核；所有证据入库 | Alvin |
 | R-03 | AI 供应商条款变化（训练、保留期） | 中 | D-007 书面存档；Phase 3 前重新核验 | Alvin |
 | R-04 | 规范的 Phase 计划总计约 11 周，单人能力不足 | 中 | 见 `docs/development-plan.md` 的工期与裁剪规则 | Alvin |
@@ -68,10 +68,10 @@
 
 ## 6. Gate 0 判定
 
-**状态：PENDING APPROVAL。** 架构、威胁模型和开发计划已经完成；D-006 至 D-021 共 16 条决策处于 `Proposed`。
+**状态：PASS（2026-10-19）。** 架构、威胁模型和开发计划已经完成；D-001 至 D-022 全部批准；R-01 已由 D-022 处理。
 
-Gate 0 通过需要同时满足：
+遗留到后续阶段的条件：
+- D-007：Phase 3 接入真实供应商之前，必须完成条款核验并存档。
+- D-008：Phase 6 生产部署之前，必须完成律师审阅。
 
-1. D-006 至 D-021 全部变为 `Approved`、`Rejected` 或 `Superseded`（被否决的要有替代决策）。
-2. R-01 的分工决策已经记录。
-3. `python3 scripts/verify_phase0.py --gate` 退出码为 0。
+**下一步：** 按规范第 2 节，Phase 1 开始前需要另行批准（新增一条决策记录）。
